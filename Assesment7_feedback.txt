@@ -28,3 +28,9 @@
                 .collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()))
         );
 }
+
+ Question 4: Percentage Calculation
+ - Mathematical actions integer will return an integer, for percentage , avg and other division actions use float/Big Decimal/Double.
+ 
+ 
+ 
