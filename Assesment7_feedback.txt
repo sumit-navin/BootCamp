@@ -1,0 +1,30 @@
+ General Feedback : 
+- Naming Conventions are not appropriate.
+    please refer this link https://www.oracle.com/technetwork/java/codeconventions-135099.html
+- 
+ 
+ 
+ Question 2: print repeated word :
+ 
+ 
+ public static void main(String[] arg){
+        String str = "this is is the word this is this";
+        List<String> words = Arrays.asList( str.toLowerCase().trim().split(" "));
+        Map<String, Integer> wordsFrequency = new HashMap<>();
+        words.forEach(
+                word -> {
+                    if(wordsFrequency.get(word)== null){
+                        wordsFrequency.put(word,1);
+                    }else{
+                        int currentCount = wordsFrequency.get(word);
+                        wordsFrequency.put(word,currentCount+1);
+                    }
+
+                }
+        );
+       System.out.print(wordsFrequency.entrySet()
+                .stream()
+                .filter(map -> map.getValue() > 1)
+                .collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()))
+        );
+}
